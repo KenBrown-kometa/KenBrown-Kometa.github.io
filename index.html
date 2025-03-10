@@ -1,28 +1,265 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>可以成为我的恋人吗？</title>
-    <link rel="stylesheet" href="style.css">
+    <title>个人主页</title>
+    <style>
+        /* 星空 canvas 样式 */
+        #star-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 15px 20px;
+            font-size: 30px;
+            font-weight: bold;
+            color: #42a5f5;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #0d0d0d;
+            color: rgb(255, 255, 255);
+            font-family: Arial, sans-serif;
+            margin: 0;
+            height: 100%;
+            overflow-x: hidden;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            height: 100vh;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            border: 4px solid white;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+
+        .text {
+            text-align: center;
+        }
+
+        .name {
+            font-size: 52px;
+            font-weight: bold;
+            color: #42a5f5;
+            margin-bottom: 20px;
+        }
+
+        .bio {
+            font-size: 22px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .icons {
+            margin-top: 20px;
+        }
+
+        .icons a {
+            margin-right: 20px;
+            text-decoration: none;
+            font-size: 32px;
+            color: white;
+        }
+
+        .about-container, .contact-container, .skills-container {
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            width: 80%;
+            max-width: 800px;
+            margin-top: 50px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: left;
+        }
+
+        .about-title, .contact-title, .skills-title {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #42a5f5;
+        }
+
+        .about-content, .contact-content, .skills-content {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .scroll-down {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            text-align: center;
+            font-size: 18px;
+            color: white;
+        }
+
+        .scroll-down a {
+            font-size: 24px;
+            color: white;
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
+    <!-- 星空 canvas -->
+    <canvas id="star-canvas"></canvas>
+
+    <div class="navbar">
+        <span class="logo">Константин</span>
+    </div>
+    
     <div class="container">
-        <img id="mainImage" src="images/heart.png" alt="爱心">
-        <h1 id="question">可以成为我的恋人吗？</h1>
-        <div class="buttons">
-            <button id="yes">可以</button>
-            <button id="no">不要</button>
+        <img class="profile-img" src="avatar.png" alt="头像">
+        <div class="text">
+            <div class="name">Константин</div>
+            <div class="bio">Hi! I'm a computer enthusiast, full-stack developer, obsessed with FOSS. Wanna be an indie dev with a successful startup.</div>
+            <div class="icons">
+                <a href="#">🔗</a>
+                <a href="#">🐱</a>
+                <a href="#">🎮</a>
+                <a href="#">💬</a>
+            </div>
         </div>
     </div>
 
-    <!-- 添加背景音乐 -->
-    <audio id="backgroundMusic" loop>
-        <source src="bgm.mp3" type="audio/mpeg">
-        您的浏览器不支持音频元素。
-    </audio>
+    <!-- About Me部分 -->
+    <div class="about-container" id="about-container">
+        <div class="about-title">About Me</div>
+        <div class="about-content">
+            <p><strong>出生地：</strong>中国河南漯河</p>
+            <p><strong>现：</strong></p>
+            <p>半年后，我开始仿照岷叔在优酷上发布了第一个 MC 实况视频。</p>
+            <p>3 年后的初一，我已经在优酷上上传了一百多个视频。在这期间，我深入了计算机知识：局域网联机、蛤蟆吃联机、修改 Minecraft 配置文件、命令方块、多玩盒子的 JS 插件…</p>
+            <p>我对编程的了解是在初二上学期开始的。当时，学校公告栏张贴了一份奥林匹克信息学竞赛（NOIP）培训的通知，很是感兴趣，对朋友说：“要不试试看？” 于是我们开始投入 C 语言的怀抱。教练老师很好，耐心地教我们人生中第一个 helloworld、循环语句、分支语句、递归、贪心算法…</p>
+        </div>
+    </div>
 
-    <!-- 引入 JavaScript 文件 -->
-    <script src="script.js"></script>
+    <div class="contact-container">
+        <div class="contact-title">Find me</div>
+        <div class="contact-content">
+            <p><strong>E-mail1:</strong> kenbrown.kometa@gmail.com</p>
+            <p><strong>E-mail2:</strong> 2674859726@qq.com</p>
+            <p><strong>Telegram:</strong> soulter618</p>
+            <p><strong>QQ:</strong> 2674859726</p>
+            <p><strong>GitHub:</strong> </p>
+            <p><strong>Discord:</strong> ken_brown888_64479</p>
+        </div>
+    </div>
+
+    <div class="skills-container">
+        <div class="skills-title">Skills</div>
+        <div class="skills-content">
+            <p><strong>Backend:</strong>  Python  /  Java  /  C++</p>
+            <p><strong>Frontend:</strong>  JavaScript  /  HTML  /  CSS</p>
+            <p><strong>Language:</strong>  Chinese  /  Russian  /  English </p>
+            <p><strong>PaaS:</strong>  Vercel / Cloudflare</p>
+            <p><strong>Filming:</strong>  Adobe Premiere / Adobe Photoshop</p>
+            <p><strong>IDE:</strong>  VSCode / Jetbrains / AndroidStudio / Vim</p>
+            <p><strong>OS:</strong>  Windows, MacOS, ArchLinux, Ubuntu, Debian</p>
+        </div>
+    </div>
+
+    <div class="scroll-down">
+        <span>Scroll down to read more</span>
+        <a href="#about-container">⬇️</a>
+    </div>
+
+    <script>
+        (function() {
+            const canvas = document.getElementById('star-canvas');
+            const ctx = canvas.getContext('2d');
+
+            // 设置 canvas 尺寸
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+
+            const stars = [];
+            const numStars = 1500; // 星星数量
+
+            // 星星构造函数
+            function Star() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.radius = Math.random() * 1.2;
+                this.speed = Math.random() * 0.5 + 0.2; // 星星下落速度
+                this.alpha = Math.random();
+                this.alphaChange = Math.random() * 0.02 + 0.005;
+            }
+
+            // 绘制星星
+            Star.prototype.draw = function() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                ctx.fillStyle = "rgba(255, 255, 255," + this.alpha + ")";
+                ctx.fill();
+            };
+
+            // 更新星星位置及透明度，实现下落和闪烁效果
+            Star.prototype.update = function() {
+                this.y += this.speed;
+                if (this.y > canvas.height) {
+                    this.y = 0;
+                    this.x = Math.random() * canvas.width;
+                }
+                this.alpha += this.alphaChange;
+                if (this.alpha <= 0 || this.alpha >= 1) {
+                    this.alphaChange = -this.alphaChange;
+                }
+            };
+
+            // 初始化所有星星
+            function initStars() {
+                stars.length = 0;
+                for (let i = 0; i < numStars; i++) {
+                    stars.push(new Star());
+                }
+            }
+
+            // 动画循环
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                for (let i = 0; i < stars.length; i++) {
+                    stars[i].update();
+                    stars[i].draw();
+                }
+                requestAnimationFrame(animate);
+            }
+
+            initStars();
+            animate();
+
+            // 监听窗口尺寸变化，调整 canvas 大小并重新初始化星星
+            window.addEventListener('resize', function() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+                initStars();
+            });
+        })();
+    </script>
 </body>
 </html>
